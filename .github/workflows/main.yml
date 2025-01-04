@@ -30,7 +30,8 @@ jobs:
       # Build Docker image
       - name: Build Docker image
         run: |
-          docker build -t $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/my-app-repo:latest .
+          docker build -t my-app-repo .
+          docker tag my-app-repo:latest 688567286595.dkr.ecr.us-east-1.amazonaws.com/my-app-repo:latest
 
       # Push Docker image to Amazon ECR
       - name: Push Docker image to ECR
